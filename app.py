@@ -12,7 +12,13 @@ from dotenv import load_dotenv
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
-load_dotenv(PROJECT_DIR.parent / ".env")
+load_dotenv(PROJECT_DIR / ".env")
+
+try:
+    if not os.getenv("GROQ_API_KEY") and "GROQ_API_KEY" in st.secrets:
+        os.environ["GROQ_API_KEY"] = str(st.secrets["GROQ_API_KEY"])
+except FileNotFoundError:
+    pass
 
 st.set_page_config(
     page_title="Telecom Care | Support Desk",

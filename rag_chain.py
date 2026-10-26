@@ -14,7 +14,7 @@ from langchain_groq import ChatGroq
 
 from retriever import build_retriever
 
-load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 

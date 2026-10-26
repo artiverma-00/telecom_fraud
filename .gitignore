@@ -36,15 +36,17 @@ htmlcov/
 cache/
 model_cache/
 
-# Generated vector store
-chroma_store/
-
 # Local databases and database sidecars
 *.db
 *.sqlite
 *.sqlite3
 *.db-*
 *.sqlite-*
+
+# The deployed app uses the checked-in retrieval index and ticket source.
+!data/tickets.db
+!chroma_store/
+!chroma_store/**
 
 # Editor and operating-system files
 .vscode/*
@@ -54,3 +56,4 @@ chroma_store/
 *.swo
 .DS_Store
 Thumbs.db
+.env
